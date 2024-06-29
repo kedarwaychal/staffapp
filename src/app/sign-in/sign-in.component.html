@@ -1,0 +1,21 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-10 col-sm-12 d-flex justify-content-center">
+            <form (ngSubmit)="OnSubmit()" [formGroup]="signInForm">
+                <h1 class="text-center">Leave   Management    Application</h1>
+                <div class="form-group">
+                    <label for="username">User Name</label>
+                    <input type="text" class="form-control" formControlName="username" id="username">
+                </div>
+                <div class="form-group">
+                    <label for="userpass">Password</label>
+                    <input type="text" class="form-control" formControlName="userpass" id="userpass">
+                </div>
+                <button class="btn btn-primary btn-block btn-sm" type="submit">LogIn</button>
+                <span *ngIf="isNewUser" class="sub-heading">Not Register Yet ? <a routerLink='/register' class="text-primary">Register</a></span>
+                <!-- <span *ngIf="!isNewUser" class="sub-heading">New User ? <a class="text-primary" (click)="isNewUser = true">Sign In</a></span> -->
+            </form>
+        </div>
+    </div>
+</div>

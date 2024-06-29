@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 col-md-12">
+        <h1 class="text-center">Leave Application</h1>
+        <div class="row">
+          <button class="btn btn-primary">
+            Staff Details
+            </button>
+            <button class="btn btn-danger" (click)="onsignOut()">
+              Sign Out
+            </button>
+        </div>
+  
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row gy-3 my-3">
+    <div class="col-sm-6 col-md-4 col-lg-3" *ngFor="let detail of infolist; let i = index">
+      <app-dashboard-card [details]="detail" [ind]='i'></app-dashboard-card>
+    </div>
+    </div>
+</div>
+
+

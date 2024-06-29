@@ -1,0 +1,106 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 col-sm-6">
+                <input type="radio" name="staff" value="HOD" [(ngModel)]="value">
+                <label for="HOD">HOD</label>
+                <input type="radio" class="selected" name="staff" value="staff" [(ngModel)]="value" class="ml-5">
+                <label for="staff">staff</label>
+            <form *ngIf="value === 'HOD'" (ngSubmit)="onSubmit()" [formGroup]="hodForm">
+                <div class="row">
+                    <div class="form-group col-md-6 mb-3">
+                      <label for="exampleInputEmail1" class="form-label">First Name</label>
+                      <input type="text" class="form-control"  formControlName="firstname">
+                    </div>
+                    <div class="form-group col-md-6 mb-3">
+                      <label for="exampleInputPassword1" class="form-label">Last Name</label>
+                      <input type="text" class="form-control"  formControlName="lastname">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-6 mb-3">
+                      <label for="exampleInputEmail1" class="form-label">Email</label>
+                      <input type="email" class="form-control"  formControlName="email">
+                    </div>
+                    <div class="form-group col-md-6 mb-3">
+                      <label for="exampleInputPassword1" class="form-label">Contact</label>
+                      <input type="text" class="form-control"  formControlName="contact">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-6 mb-3">
+                      <label for="exampleInputEmail1" class="form-label">Department</label>
+                      <br>
+                      <select id="contact" name="select" class="w-100" formControlName="Department">
+                        <option value="sales">Meachanical</option>
+                        <option value="other">IT</option>
+                        <option value="other">Civil</option>
+                      </select>
+                    </div>
+                </div>
+                <div formGroupName="LogIn">
+                  <div class="row">
+                    <div class="form-group col-md-6 mb-3">
+                      <label for="exampleInputEmail1" class="form-label">User Name</label>
+                      <input type="email" class="form-control"  formControlName="username">
+                    </div>
+                    <div class="form-group col-md-6 mb-3">
+                      <label for="exampleInputPassword1" class="form-label">Password</label>
+                      <input type="password" class="form-control" formControlName="password" >
+                    </div>
+                </div>
+                </div>
+                <button class="btn btn-primary btn-block btn-sm" type="submit">Register</button>
+                <span class="sub-heading">Already Register ? <a routerLink='/signIn' class="text-primary">LogIn</a></span>
+            </form>
+            <form *ngIf="value === 'staff'" (ngSubmit)="onSubmitSt()" [formGroup]="hodForm">
+              <div class="row">
+                  <div class="form-group col-md-6 mb-3">
+                    <label for="exampleInputEmail1" class="form-label">First Name</label>
+                    <input type="text" class="form-control"  formControlName="firstname">
+                  </div>
+                  <div class="form-group col-md-6 mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Last Name</label>
+                    <input type="text" class="form-control"  formControlName="lastname">
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="form-group col-md-6 mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Email</label>
+                    <input type="email" class="form-control"  formControlName="email">
+                  </div>
+                  <div class="form-group col-md-6 mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Contact</label>
+                    <input type="text" class="form-control"  formControlName="contact">
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="form-group col-md-6 mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Department</label>
+                    <br>
+                    <select id="contact" name="select" class="w-100" formControlName="Department">
+                      <option value="sales">Meachanical</option>
+                      <option value="other">IT</option>
+                      <option value="other">Civil</option>
+                    </select>
+                  </div>
+              </div>
+              <div formGroupName="LogIn">
+                <div class="row">
+                  <div class="form-group col-md-6 mb-3">
+                    <label for="exampleInputEmail1" class="form-label">User Name</label>
+                    <input type="text" class="form-control"  formControlName="username">
+                  </div>
+                  <div class="form-group col-md-6 mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Password</label>
+                    <input type="text" class="form-control" formControlName="password" >
+                  </div>
+              </div>
+              </div>
+              <button class="btn btn-primary btn-block btn-sm" type="submit">Register</button>
+              <span class="sub-heading">Already Register ? <a routerLink='/signIn' class="text-primary">LogIn</a></span>
+          </form>
+        </div>
+    </div>
+</div>
+
+

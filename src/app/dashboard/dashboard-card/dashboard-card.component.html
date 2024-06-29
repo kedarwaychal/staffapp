@@ -1,0 +1,15 @@
+<div class="card">
+    <div class="card-body text-center">
+      <h5>{{details.name}}</h5>
+      <p>Leave from{{details.from}}
+        <br><br>
+        Number of days {{details.leaveday}}</p>
+      <p>Reason : {{details.reason}}</p>
+     <div id="button" [class.d-none]="exist" *ngIf="details.status == 'pending'">
+      <button class="btn btn-primary mr-3" (click)="Onclick(details,details.leaveday)">Approve</button>
+      <button class="btn btn-danger" (click)="Onreject(details,details.leaveday)">Reject</button>
+     </div>
+      <span *ngIf="details.status != 'pending'">{{details.status}}</span>
+  </div>
+
+</div>
